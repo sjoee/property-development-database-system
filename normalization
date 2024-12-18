@@ -1,0 +1,65 @@
+### 1NF
+
+: development, property, salesAdvisor, sitemanager, owner, contractor, repair, staff
+
+Development (development_id, name, region, … )
+
+Property (property_id, development_id (FK) , type_name, …)
+
+SalesAdvisor (advisor_id , name, contactNo, …)
+
+SiteManager (manager_id, name, contactNo, development_id(FK), …)
+
+Owner ( owner_id, owner_name, contactNo, … )
+
+Contractor (contractor_id , contractor_name, contactNo, … )
+
+Repair (repair_id, property_id(FK), start_date, status, problem, …)
+
+Staff (staff_id, staff_name, …)
+
+### 2NF
+
+: development, property, contractor, sitemanager, repair
+
+Development (development_id, name, region, … )
+
+Property (property_id, development_id (FK) , type_name, …)
+
+Contractor (contractor_id , contractor_name, contactNo, … )
+
+SiteManager (manager_id, name, contactNo, development_id(FK), …)
+
+Repair (repair_id, property_id(FK), start_date, status, problem, …)
+
+: salesAdvisor, staff
+
+SalesAdvisor (advisor_id , name, contactNo, …)
+
+Staff (staff_id, staff_name, …)
+
+: owner
+
+Owner ( owner_id, owner_name, contactNo, … )
+
+partial dependency
+
+ **`type_name`** depends only on **`property_id`**,
+
+### 3NF
+
+Development (development_id, name, region, … )
+
+Property (property_id, development_id (FK) , type_name, …)
+
+SalesAdvisor (advisor_id , name, contactNo)
+
+SiteManager (manager_id, name, contactNo, development_id(FK), …)
+
+Owner ( owner_id, owner_name, contactNo, … )
+
+Contractor (contractor_id , contractor_name, contactNo, … )
+
+Repair (repair_id, property_id(FK), start_date, status, problem, …)
+
+Staff (staff_id, staff_name, …)
